@@ -4,8 +4,6 @@ from datetime import datetime, timedelta
 import requests
 import json
 
-url = "SLACK_HOOK_URL"
-
 
 def push_to_slack(text):
     payload = json.dumps({"text": text})
@@ -89,6 +87,7 @@ def get_repo_stats(owner, repo, access_token):
         print(response)
 
 
-# Example usage
+# CONFIGURATION
+url = "SLACK_HOOK_URL"
 access_token = "YUOR_GITHUB_ACCESS_TOKEN"
 get_repo_stats("OWNER", "REPO_NAME", access_token)
